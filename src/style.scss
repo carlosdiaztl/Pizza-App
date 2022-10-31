@@ -44,32 +44,19 @@ body {
     height: calc(100vh - 130px);
     color: #fff;
 
-    &--pink {
+    
         background-color: #833471;
-    }
+    
 
-    &--green {
-        background-color: #1289A7;
-    }
-
-    &--blue {
-        background-color: #0097e6;
-    }
 }
 
 .dashboard {
     width: 100%;
     height: calc(100vh - 130px);
     
-    &--pink {
+   
         background-color: #FDA7DF;
-    }
+    
 
-    &--green {
-        background-color: #55efc4;
-    }
-
-    &--blue {
-        background-color: #7ed6df;
-    }
+   
 }

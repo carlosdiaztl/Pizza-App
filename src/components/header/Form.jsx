@@ -1,20 +1,26 @@
-import React from "react";
+import React , { useContext } from 'react'
 import { useForm } from "react-hook-form";
-import ButttonGoRegister from "../buttonRegister/ButttonGoRegister";
+import { AppContext } from '../App'
+import '../header/style.scss'
 
-
-const Login = () => {
-
+const Form = () => {
+    const { setTheme, theme, user, setUser } = useContext(AppContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const userLogin = (data) => {
         console.log(data);
+        setUser(data)
+        console.log(user);
        
+    }
+    const hiddenLoggin=()=>{
+        setTheme(false)
+        
     }
   return (
     <>
 
-    <form onSubmit={handleSubmit(userLogin)} className="login">
+     <form  onSubmit={handleSubmit(userLogin)} className="login-form">
       <label>
         Email:
         <input type="email" {...register("email", { required: true })} />
@@ -26,10 +32,16 @@ const Login = () => {
         {errors.password && <span>El password es obligatorio</span>}
       </label>
       <button type="submit">Iniciar Sesión</button>
+      <button onClick={hiddenLoggin}> X</button>
+      
+      
+      
     </form>
-    <ButttonGoRegister/>
+    
     </>
-  );
-};
+    
+    
+  )
+}
 
-export default Login;
+export default Form
