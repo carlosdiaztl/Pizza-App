@@ -3,7 +3,7 @@ import "../style.scss";
 import Dashboard from "./dashboard/Dashboard";
 import Header from "./header/Header";
 import Sidebar from "./sidebar/Sidebar";
-import RegisterForm from "./register/RegisterForm";
+
 export const AppContext = createContext({});
 
 const App = () => {
@@ -22,7 +22,6 @@ const App = () => {
             <div className="main">
                 <Sidebar />
                 <Dashboard />
-                <RegisterForm />
             </div>
         </AppContext.Provider>
     )

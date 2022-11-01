@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../App'
+import RegisterForm from '../register/RegisterForm';
 import Form from './Form';
 
 const ButtonHeader = () => {
@@ -12,6 +13,9 @@ const ButtonHeader = () => {
   const ShowLogin=()=>{
     setTheme(<Form/>)
   }
+  const ShowRegister=()=>{
+    setTheme(<RegisterForm/>)
+  }
 
   return (
     <>
@@ -19,6 +23,7 @@ const ButtonHeader = () => {
 
     
     <button onClick={ShowLogin}> Loggeate </button>
+    <button onClick={ShowRegister}> Registrate </button>
     </>
   )
 }

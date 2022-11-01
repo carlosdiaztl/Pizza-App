@@ -1,12 +1,15 @@
-import * as React from "react";
+import  React,{ useContext } from "react";
 import { useForm } from "react-hook-form";
 import "./styles.css";
 import Register from "./Register";
 import {RegisterUser} from '../../services/validate'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
+import { AppContext } from '../App'
 
 function RegisterForm() {
-  const { register, handleSubmit } = useForm({
+  const { setTheme, theme , user, setUser } = useContext(AppContext);
+  
+  const { register, handleSubmit, } = useForm({
     defaultValues: {
       email: "",
       username: "",
@@ -18,7 +21,7 @@ function RegisterForm() {
   });
 
   const onSent = async(data) => {
-    const user = {
+    const userCreated = {
       email: data.email,
       username: data.username,
       password: data.password,
@@ -29,12 +32,15 @@ function RegisterForm() {
       },
      
     };
-    console.log(user);
-    await RegisterUser(user)
+    console.log(userCreated);
+    await RegisterUser(userCreated)
+    setUser(userCreated)
+    setTheme(<></>)
+    
   };
 
   return (
-    <form onSubmit={handleSubmit(onSent)}>
+    <form className="formR" onSubmit={handleSubmit(onSent)}>
       <Register />
       <input {...register("email", { required: true })} placeholder="Email" />
       <input
