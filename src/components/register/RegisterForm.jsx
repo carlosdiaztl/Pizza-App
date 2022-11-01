@@ -1,12 +1,12 @@
 import  React,{ useContext } from "react";
 import { useForm } from "react-hook-form";
 import "./styles.css";
-import Register from "./Register";
+
 import {RegisterUser} from '../../services/validate'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { AppContext } from '../App'
 
-function RegisterForm() {
+const RegisterForm=()=> {
   const { setTheme, theme , user, setUser } = useContext(AppContext);
   
   const { register, handleSubmit, } = useForm({
@@ -38,10 +38,14 @@ function RegisterForm() {
     setTheme(<></>)
     
   };
+  const hiddenLoggin=()=>{
+    setTheme(false)
+    
+}
 
   return (
     <form className="formR" onSubmit={handleSubmit(onSent)}>
-      <Register />
+     
       <input {...register("email", { required: true })} placeholder="Email" />
       <input
         {...register("username", { required: true })}
@@ -65,8 +69,11 @@ function RegisterForm() {
         {...register("address", { required: true })}
         placeholder="Adress"
       />
+      <button onClick={hiddenLoggin}> X</button>
 
       <button type="submit">Registrarse</button>
+      
+      
     </form>
   );
 }
