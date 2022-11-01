@@ -10,13 +10,15 @@ const App = () => {
 
     const [theme, setTheme] = useState(false)
     const [user, setUser] = useState({})
+    
 
     return (
         <AppContext.Provider value={{
             theme,
             setTheme,
             user,
-            setUser
+            setUser,
+            
         }}>
             <Header />
             <div className="main">
