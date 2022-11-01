@@ -7,7 +7,10 @@ const Sidebar = () => {
   const {theme} = useContext(AppContext);
 
   return (
-    <div className={`sidebar sidebar--${theme}`}>Sidebar
+    <div className="sidebar">Sidebar
+    <button> Favoritas</button>
+    <button> Las de la casa</button>
+    <button> recomendada del mes</button>
     
 
     </div>

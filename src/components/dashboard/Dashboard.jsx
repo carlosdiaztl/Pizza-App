@@ -7,7 +7,7 @@ const Dashboard = () => {
 
   return (
     <div className= "dashboard">Dashboard
-    <img src="https://i.ibb.co/CnkQwPN/V1-WEB-PIZZAS-CARNES.png" alt="V1-WEB-PIZZAS-CARNES"  />
+
     <a href="https://ibb.co/jLcD8JB"><img src="https://i.ibb.co/CnkQwPN/V1-WEB-PIZZAS-CARNES.png" alt="V1-WEB-PIZZAS-CARNES" border="0" /></a>1
     <a href="https://ibb.co/G7fBmJp"><img src="https://i.ibb.co/1ZYhcnQ/V1-WEB-PIZZAS-NAPOLITANA.png" alt="V1-WEB-PIZZAS-NAPOLITANA" border="0" /></a>2
     <a href="https://ibb.co/82y5WWm"><img src="https://i.ibb.co/ft3phhX/V1-WEB-PIZZAS-POLLO-TOCINETA.png" alt="V1-WEB-PIZZAS-POLLO-TOCINETA" border="0" /></a>3
