@@ -2,15 +2,27 @@ import React , { useContext } from 'react'
 import { useForm } from "react-hook-form";
 import { AppContext } from '../App'
 import '../header/style.scss'
+import { validateUser } from '../../services/validate';
 
 const Form = () => {
     const { setTheme, theme, user, setUser } = useContext(AppContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const userLogin = (data) => {
-        console.log(data);
-        setUser(data)
+    const userLogin = async(dataI) => {
+        
+      const  usuariologed= await validateUser(dataI.email,dataI.password)
+        
+        console.log(usuariologed);
+        if (usuariologed) {
+          setUser(usuariologed)
         console.log(user);
+          
+        }
+        else{
+          console.log('no se hallo nada');
+        }
+        
+        
        
     }
     const hiddenLoggin=()=>{

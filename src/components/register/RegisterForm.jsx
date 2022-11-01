@@ -2,6 +2,8 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import "./styles.css";
 import Register from "./Register";
+import {RegisterUser} from '../../services/validate'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 function RegisterForm() {
   const { register, handleSubmit } = useForm({
@@ -15,7 +17,7 @@ function RegisterForm() {
     },
   });
 
-  const onSent = (data) => {
+  const onSent = async(data) => {
     const user = {
       email: data.email,
       username: data.username,
@@ -25,8 +27,10 @@ function RegisterForm() {
         Datebirth: data.Datebirth,
         address: data.address,
       },
+     
     };
     console.log(user);
+    await RegisterUser(user)
   };
 
   return (
