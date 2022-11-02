@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
-import { AppContext } from "../App";
-import "./style.scss";
-import { Link } from "react-router-dom";
+
+import React, {useContext, useEffect} from 'react'
+import { Link } from 'react-router-dom';
+import { getPizzas } from '../../services/pizzas';
+import { AppContext } from '../App'
+import "./style.scss"
 import image1 from "../../assets/V1_WEB-PIZZAS-CARNES.png";
 import image2 from "../../assets/V1_WEB-PIZZAS-DOS-QUESOS-MANZANA.png";
 import image3 from "../../assets/V1_WEB-PIZZAS-HAWAIANA.png";
@@ -9,11 +11,54 @@ import image4 from "../../assets/V1_WEB-PIZZAS-NAPOLITANA.png";
 import image5 from "../../assets/V1_WEB-PIZZAS-POLLO-TOCINETA.png";
 import image6 from "../../assets/V1_WEB-PIZZAS-SALMON-TOMATE-CHERRY.png";
 
+
 const Dashboard = () => {
-  const { theme } = useContext(AppContext);
+
+
+  const {theme,pizzas,setPizzas} = useContext(AppContext);
+  const traerPizzas= async()=>{
+    const allPizzas= await getPizzas()
+    setPizzas(allPizzas)
+    console.log(pizzas);
+
+  }
+  
+  useEffect(() => {
+    traerPizzas()
+    
+  }, [])
+  console.log(pizzas);
+  
+  const muestravalor=(pizzita)=>{
+    console.log(pizzita.pizza,pizzita.precio);
+  }
 
   return (
-    <div className="dashboard">
+  <>
+
+    <div className= "slider-container">
+    
+    { pizzas.map((item,index)=>{
+      return(
+        <section key={index} className="slider-item"> 
+        <h1> {item.pizza} </h1>
+        <Link to={`/${item.pizza}`}>  <img   src={item.imagenes} /></Link>
+        <p>{item.ingredientes} </p>
+        <h3>Costo: {item.precio} </h3>
+        <button onClick={()=>{muestravalor(item)} }> añadir</button>
+        
+        
+        </section>
+       
+         
+         
+      )
+    })}
+
+    
+</div>  
+
+         <div className="dashboard">
       <div className="dashboard__disponibles">
         <h2>Pizzas disponibles</h2>
         <Link className="dashboard__link">Ver todas</Link>
@@ -52,7 +97,13 @@ const Dashboard = () => {
     <a href="https://ibb.co/njHbpGP"><img src="https://i.ibb.co/jDcTtNJ/V1-WEB-PIZZAS-TOCINETA-MAIZTIERNO.png" alt="V1-WEB-PIZZAS-TOCINETA-MAIZTIERNO" border="0" /></a>10
      */}
     </div>
-  );
-};
+    
+    
+    
+
+  </>
+  )
+}
+
 
 export default Dashboard;
