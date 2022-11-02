@@ -1,14 +1,105 @@
-.login-form{
-    position: absolute;
-    top: 25%;
-    right: 25%;
-    background-color: aqua;
-    backdrop-filter: blur(5px);
-    z-index: 20;
+$fondo-home: #fef0ef;
+$color-precio: #fb174f;
+$color-filter: #fffdfe;
+$datos-pizza: #252525;
+$color-reviews: #f97707;
+$size-body: 16px;
 
-
+@mixin inputs ($i){
+  width: 220px;
+  height:5vh;
+  background-color: transparent;
+  border-top: 1px;
+  border-left: none;
+  border-right: none;
 }
-.header{
-    background-color: blue;
+
+@mixin buttons($b){
+    width: 30%;
+    height: 7vh;
+    background-color: $color-filter;
+    border-radius: 5px;
+    border: none;
+    &:hover{
+        background-color: #fb174f;
+    }
+}
+
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 5vh;
+  left: 10%;
+  width: 80vw;
+  height: 100%;
+  z-index: 20;
+  gap: 3vh;
+  background-image: url(../../assets/R.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  .login__email {
+    @include inputs(1);
+  }
+  .login__password {
+    @include inputs(1);
+  }
+  .login__button{
+    @include buttons(1);
+  }
+  .login__final{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .form__buttonhidden{
+    width: 50px;
+    border: none;
+    border-radius: 2px;
+    &:hover{
+      background-color: $color-precio;
+    }
    
+  }
+}
+.header {
+  background-color: $color-precio;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  flex-direction: row-reverse;
+  gap: 1vh;
+  .header__tittle{
+    font-size: 50px;
+  }
+  .header__h2{
+    font-size: 20px;
+    font-weight: normal;
+  }
+}
+
+.main__login{
+    color: white;
+    width: 50vw;
+    height: 80vh;
+    gap: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10vh;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (max-width:300px) {
+    .main__login{
+        height: 10vh;
+    }
+    .login__form{
+        height: 50vh;
+    }
 }
