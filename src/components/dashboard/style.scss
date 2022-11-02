@@ -5,19 +5,21 @@ $color-filter: #fffdfe;
 $datos-pizza: #252525;
 $color-reviews: #f97707;
 $size-body: 16px;
+.dashboard{
+    background-color: #a5707d;
+        background-color: $fondo-home;
+        display: flex;
+ 
+}
 
 .slider-container {
     display: flex;
     
-    width: 100%;
-    height: 60%;
+    width: 50vw;
+    height: 50vh;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
   }
-  .content{
-    width: 50vw;
-  }
- 
   
   .slider-container section {
     display: flex;
@@ -38,49 +40,30 @@ $size-body: 16px;
     }
   }
 
-.dashboard {
-    width: 100vw;
-    height: 100%;
-    background-color: $fondo-home;
-    
-    &__disponibles{
-        display: flex;
-        justify-content: space-around;
-    }
-    &__link{
-        text-decoration: none;
-        font-weight: bolder;
-    }
-    &__image1{
-        width: 100%;
-    }
-    &__image2{
-        width: 100%;
-    }
-    &__image3{
-        width: 100%;
-    }
-    &__image4{
-        width: 20%;
-    }
-    &__image5{
-        width: 20%;
-    }
-    &__image6{
-        width: 20%;
-    }
-    &__center{
-        display: flex;
-        align-items: center;
 
-    }
-   
-}
+// .dashboard {
+//     width: 100vw;
+//     height: 100%;
 
-@media screen and (max-width:400px) {
-    .dashboard {
-        display: flex;
-        flex-direction: column;
+
+@media screen and (max-width:650px) {
+    .dashboard{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 100vw;
+       height: 65vh;
+       
     }
+    .slider-container {
+        display: flex;
+        
+        width: 60vw;
+         img{
+            width: 300px;
+            
+        }
+       
+      }
 }
 

@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import "../style.scss";
 import Dashboard from "./dashboard/Dashboard";
+import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Sidebar from "./sidebar/Sidebar";
 
@@ -26,6 +27,7 @@ const App = () => {
                 <Sidebar />
                 <Dashboard />
             </div>
+            <Footer/>
         </AppContext.Provider>
     )
 }

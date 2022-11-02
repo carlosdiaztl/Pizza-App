@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import { getPizzas } from '../../services/pizzas';
 import { AppContext } from '../App'
 import "./style.scss"
-import image1 from "../../assets/V1_WEB-PIZZAS-CARNES.png";
-import image2 from "../../assets/V1_WEB-PIZZAS-DOS-QUESOS-MANZANA.png";
+
+
 import image3 from "../../assets/V1_WEB-PIZZAS-HAWAIANA.png";
-import image4 from "../../assets/V1_WEB-PIZZAS-NAPOLITANA.png";
-import image5 from "../../assets/V1_WEB-PIZZAS-POLLO-TOCINETA.png";
-import image6 from "../../assets/V1_WEB-PIZZAS-SALMON-TOMATE-CHERRY.png";
+import Rigthbar from '../rigthSidebar/Rigthbar';
+
 
 
 const Dashboard = () => {
@@ -34,18 +33,18 @@ const Dashboard = () => {
   }
 
   return (
-  <>
+  
 
-    <div className='main_dash'>
+    
 
          <div className="dashboard">
+         <div className='dashboard_center'>
       <div className="dashboard__disponibles">
         <h2>Pizzas disponibles</h2>
         <Link className="dashboard__link">Ver todas</Link>
       </div>
 
-      <div className="dashboard__center">
-      <section className='content'>
+      
 
       <div className= "slider-container">
     
@@ -66,32 +65,23 @@ const Dashboard = () => {
       )
     })}
 
-    
 </div>  
-      </section>
-        <div className="dashboard__right">
-          <figure>
-            <img className="dashboard__image2" src={image2} alt="" />
-            <img className="dashboard__image3" src={image3} alt="" />
-          </figure>
-        </div>
-      </div>
+    
+      
+          </div>
+          <Rigthbar/>
+          
+      
 
-      <div className="dashboard__bottom">
-        <figure>
-          <img className="dashboard__image4" src={image4} alt="" />
-          <img className="dashboard__image5" src={image5} alt="" />
-          <img className="dashboard__image6" src={image6} alt="" />
-        </figure>
-      </div>
+      
       
     </div>
     
     
     
 
-     </div>
-  </>
+   
+  
   )
 }
 

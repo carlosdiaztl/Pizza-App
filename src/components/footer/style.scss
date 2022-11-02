@@ -1,0 +1,31 @@
+$fondo-home: #fef0ef;
+
+.footer{
+    height: 20vh;
+    background-color: $fondo-home;
+    display: flex;
+    &_imgs{
+        display: none;
+    }
+    img{
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width:650px){
+    .dashboard__image5{
+        display: none;
+    }
+    .dashboard__image6{
+        display: none;
+    }
+    .dashboard__image4{
+        display: none;
+    }
+    .footer{
+        &_imgs{
+            display: block;
+        }
+        
+    }
+}

@@ -1,0 +1,18 @@
+.dashboard_rigth{
+    display: flex;
+    flex-direction: column;
+   
+    width: 30vw;
+    height: 100%;
+    img{
+    width: 100%;
+    height: 50%;
+       object-fit: cover;
+    }
+}
+@media screen and (max-width:650px){
+    .dashboard_rigth{
+        display: none;
+    }
+}
+          
