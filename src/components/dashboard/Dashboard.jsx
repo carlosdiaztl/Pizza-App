@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
-import "./dashboard.scss";
+import "./style.scss";
 import { Link } from "react-router-dom";
 import image1 from "../../assets/V1_WEB-PIZZAS-CARNES.png";
 import image2 from "../../assets/V1_WEB-PIZZAS-DOS-QUESOS-MANZANA.png";
