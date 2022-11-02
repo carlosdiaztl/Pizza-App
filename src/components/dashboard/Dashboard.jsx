@@ -36,7 +36,16 @@ const Dashboard = () => {
   return (
   <>
 
-    <div className= "slider-container">
+    
+
+         <div className="dashboard">
+      <div className="dashboard__disponibles">
+        <h2>Pizzas disponibles</h2>
+        <Link className="dashboard__link">Ver todas</Link>
+      </div>
+
+      <div className="dashboard__center">
+      <div className= "slider-container">
     
     { pizzas.map((item,index)=>{
       return(
@@ -57,19 +66,6 @@ const Dashboard = () => {
 
     
 </div>  
-
-         <div className="dashboard">
-      <div className="dashboard__disponibles">
-        <h2>Pizzas disponibles</h2>
-        <Link className="dashboard__link">Ver todas</Link>
-      </div>
-
-      <div className="dashboard__center">
-        <div>
-          <figure>
-            <img className="dashboard__image1" src={image1} alt="Pizza" />
-          </figure>
-        </div>
         <div className="dashboard__right">
           <figure>
             <img className="dashboard__image2" src={image2} alt="" />
