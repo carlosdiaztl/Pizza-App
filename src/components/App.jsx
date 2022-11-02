@@ -10,13 +10,16 @@ const App = () => {
 
     const [theme, setTheme] = useState(false)
     const [user, setUser] = useState({})
+    const [pizzas, setPizzas] = useState([])
 
     return (
         <AppContext.Provider value={{
             theme,
             setTheme,
             user,
-            setUser
+            setUser,
+            pizzas,
+            setPizzas
         }}>
             <Header />
             <div className="main">
