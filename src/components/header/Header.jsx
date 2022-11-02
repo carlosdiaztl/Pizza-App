@@ -15,15 +15,17 @@ const Header = () => {
 
 
     return (
+        <>
         <div className={`header header`}>
+            <div>
         {theme}
             <h1> Carlota pizzería</h1>
             {Object.entries(user).length === 0?<h2> Bienvenido  </h2>:<><h2> Bienvenido {user.profile.name}   </h2>  <h3> ¿Que pizza deseas el dia de hoy ?</h3> <button onClick={CloseSession}> Log out</button> </> }
             
             <ButtonHeader />
-            
-            
-        </div>
+            </div>
+            </div>
+            </>
     )
 }
 

@@ -1,0 +1,80 @@
+$fondo-home: #fef0ef;
+$color-precio: #fb174f;
+$color-filter: #fffdfe;
+$datos-pizza: #252525;
+$color-reviews: #f97707;
+$size-body: 16px;
+
+
+@mixin inputRegister ($ir) {
+  width: 220px;
+  height:3vh;
+  border-top: 1px;
+  background-color: transparent;
+  border-left: none;
+  border-right: none;
+  
+}
+@mixin buttons($b){
+    width: 30%;
+    height: 7vh;
+    background-color: $color-filter;
+    border-radius: 5px;
+    border: none;
+    &:hover{
+        background-color: #fb174f;
+    }
+}
+
+
+.register__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5vh;
+    left: 10%;
+    width: 80vw;
+    height: 100%;
+    z-index: 20;
+    background-image: url(../../assets/R.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .register__select{
+        @include inputRegister(1);
+    }
+    .register__buttonhidden{
+        width: 50px;
+    border: none;
+    border-radius: 2px;
+    &:hover{
+      background-color: $color-precio;
+    }
+    }
+    .register__button{
+        @include buttons(1);
+    }
+  }
+
+  .main__register{
+    color: white;
+    width: 50vw;
+    height: 80vh;
+    gap: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10vh;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width:300px) {
+    .main__register{
+        height: 10vh;
+    }
+    .register__form{
+        height: 50vh;
+    }
+}

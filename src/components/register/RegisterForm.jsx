@@ -1,7 +1,6 @@
 import  React,{ useContext } from "react";
 import { useForm } from "react-hook-form";
-import "./styles.css";
-
+import './register.scss';
 import {RegisterUser} from '../../services/validate'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { AppContext } from '../App'
@@ -44,36 +43,36 @@ const RegisterForm=()=> {
 }
 
   return (
-    <form className="formR" onSubmit={handleSubmit(onSent)}>
-     
-      <input {...register("email", { required: true })} placeholder="Email" />
+    <form className="register__form" onSubmit={handleSubmit(onSent)}>
+     <div className='main__register'>
+       <h1>Crea tu cuenta</h1>
+      <p>Disfruta de la mejor Pizza creada para las personas amantes del Código.</p>
+      <input {...register("email", { required: true })} className="register__select" placeholder="Email" />
       <input
         {...register("username", { required: true })}
-        placeholder="Username"
+        placeholder="Username" className="register__select"
       />
       <input
         {...register("password", { minLength: 4 })}
-        placeholder="Password"
+        placeholder="Password" className="register__select"
         type="password"
       />
       <input
         {...register("name", { required: true })}
-        placeholder="What's your name?"
+        placeholder="What's your name?" className="register__select"
       />
       <input
         type="date"
         {...register("Datebirth", { required: true })}
-        placeholder="Date of Birth"
+        placeholder="Date of Birth" className="register__select"
       />
       <input
         {...register("address", { required: true })}
-        placeholder="Adress"
+        placeholder="Adress" className="register__select"
       />
-      <button onClick={hiddenLoggin}> X</button>
-
-      <button type="submit">Registrarse</button>
-      
-      
+      <button type="submit" className='register__button'>Registrarse</button>
+      <button onClick={hiddenLoggin} className="register__buttonhidden"> cerrar</button>
+      </div>
     </form>
   );
 }
