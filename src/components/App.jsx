@@ -25,10 +25,10 @@ const App = () => {
       }}
     >
       <Header />
-      <Carousel />
       <div className="main">
         <Sidebar />
-        <Dashboard />
+        <Carousel />
+        {/* <Dashboard /> */}
       </div>
       <Footer />
     </AppContext.Provider>
