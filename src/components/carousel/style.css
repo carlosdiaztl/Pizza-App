@@ -1,5 +1,7 @@
 .pizzas-container {
   margin: 8% 0;
+  width: 50vw;
+  height: 50vh;
   color: black;
   background-color: #fef0ef !important;
 }
