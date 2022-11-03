@@ -19,11 +19,11 @@ const ButtonHeader = () => {
 
   return (
     <>
+    <div className='header__buttonss'>
+    <button onClick={ShowLogin} className="header__buttons"> Ingresar </button>
+    <button onClick={ShowRegister} className="header__buttons"> Registrate </button>
+    </div>
     
-
-    
-    <button onClick={ShowLogin}> Loggeate </button>
-    <button onClick={ShowRegister}> Registrate </button>
     </>
   )
 }

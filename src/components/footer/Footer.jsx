@@ -3,24 +3,16 @@ import './style.scss'
 import image4 from "../../assets/V1_WEB-PIZZAS-NAPOLITANA.png";
 import image5 from "../../assets/V1_WEB-PIZZAS-POLLO-TOCINETA.png";
 import image6 from "../../assets/V1_WEB-PIZZAS-SALMON-TOMATE-CHERRY.png";
-import lupa from '../../assets/lupa.png'
-import carrro from '../../assets/carrocompras.png'
-import home from '../../assets/librohome.png'
+import lupa from '../../assets/lupas.png'
+import carrro from '../../assets/cesta-de-la-compra.png'
+import home from '../../assets/libro.png'
 
 const Footer = () => {
   return (
    <footer className='footer'>
-
-    
-          <img className="dashboard__image4" src={image4} alt="" />
-          <img className="dashboard__image5" src={image5} alt="" />
-          <img className="dashboard__image6" src={image6} alt="" />
-          
-          <img src={home} className="footer_imgs" />
-          <img src={carrro} className="footer_imgs" />
-          <img src={lupa} className="footer_imgs" />
-
-        
+          <button className='footer__buttons'><img src={home} className="footer_imgs" /></button>
+          <button className='footer__buttonsCenter'><img src={carrro} className="footer_imgs" /></button>
+          <button className='footer__buttons'><img src={lupa} className="footer_imgs"/></button> 
    </footer>
   )
 }

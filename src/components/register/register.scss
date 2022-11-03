@@ -55,6 +55,15 @@ $size-body: 16px;
     .register__button{
         @include buttons(1);
     }
+    .register__logo{
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      color: white;
+    }
+    .register__icono{
+      width: 100px;
+    }
   }
 
   .main__register{

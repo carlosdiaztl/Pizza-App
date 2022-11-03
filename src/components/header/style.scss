@@ -8,7 +8,7 @@ $size-body: 16px;
 @mixin inputs ($i){
   width: 220px;
   height:5vh;
-  background-color: transparent;
+  background-color: #fffdfe51;
   border-top: 1px;
   border-left: none;
   border-right: none;
@@ -32,7 +32,6 @@ $size-body: 16px;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 5vh;
   left: 10%;
   width: 80vw;
   height: 95%;
@@ -63,24 +62,57 @@ $size-body: 16px;
     &:hover{
       background-color: $color-precio;
     }
-   
+    
   }
+  .login__logo{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    color: white;
+  }
+  .login__icono{
+    width: 100px;
+  }
+  
 }
+
 .header {
-  background-color: $color-precio;
+  background-color: $fondo-home;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  padding-left: 1vw;
+  padding-right: 1vw;
   height: 15vh;
-  flex-direction: row-reverse;
   gap: 1vh;
-  .header__tittle{
-    font-size: 50px;
+  
+  .header__buttonss{
+    display: flex;
+    gap: 1vw;
   }
-  .header__h2{
-    font-size: 20px;
-    font-weight: normal;
+  .header__buttons{
+    width: 70px;
+    background-color: $color-filter;
+    border: none;
+    &:hover{
+      background-color: $color-precio;
+    }
   }
+  .header__usuario{
+    width: 100px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+  }
+
+  .header__section{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+ 
 }
 
 .main__login{
@@ -94,12 +126,16 @@ $size-body: 16px;
     top: 10vh;
     flex-direction: column;
     align-items: center;
+
 }
-@media screen and (max-width:300px) {
+@media screen and (max-width:400px) {
     .main__login{
         height: 10vh;
     }
     .login__form{
         height: 50vh;
+    }
+    .header{
+      background-color: #f97707;
     }
 }
