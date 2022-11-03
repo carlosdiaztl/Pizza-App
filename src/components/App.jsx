@@ -25,7 +25,7 @@ const App = () => {
             <Header />
             <div className="main">
                 <Sidebar />
-                <Dashboard />
+                {/* <Dashboard /> */}
             </div>
             <Footer/>
         </AppContext.Provider>

@@ -31,8 +31,7 @@ const Router = () => {
                     <Route element={<App/>}>
                     
 
-                        {/* <Route path="vuelo"  element={<SelectVuelos/> } />
-                        <Route path="vueloidavuelta"  element={<Vueloidaregresp/> } /> */}
+                    
                     </Route>
                     {pizzasList.map((item,index)=>(
                         <>
