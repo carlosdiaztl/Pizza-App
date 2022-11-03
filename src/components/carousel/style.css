@@ -1,0 +1,54 @@
+.pizzas-container {
+  margin: 8% 0;
+  width: 50vw;
+  height: 50vh;
+  color: black;
+  background-color: #fef0ef !important;
+}
+
+.pizzas-carousel-container {
+  margin: 3%;
+}
+
+.pizzas-container-heading {
+  color: black;
+  margin: 2% auto;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pizzas-carousel-img {
+  height: 150px;
+  width: 100%;
+  margin: 0 auto 3%;
+}
+
+.pizzas-carousel-caption {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 1.25rem;
+  padding-top: 1.25rem;
+  margin: auto;
+  color: #fefefe;
+  text-align: center;
+  width: 50%;
+}
+
+.pizzas-carousel-caption p {
+  color: black;
+}
+
+h3 {
+  color: black;
+}
+
+@media screen and (max-width: 400px) {
+  .pizzas-carousel-img {
+    height: 150px;
+    width: 100%;
+  }
+  .pizzas-carousel-caption p {
+    font-size: 14px;
+  }
+}
