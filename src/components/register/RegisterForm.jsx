@@ -4,6 +4,8 @@ import './register.scss';
 import {RegisterUser} from '../../services/validate'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { AppContext } from '../App'
+import pizzalogo from "../../assets/pizza.png";
+
 
 const RegisterForm=()=> {
   const { setTheme, theme , user, setUser } = useContext(AppContext);
@@ -44,7 +46,13 @@ const RegisterForm=()=> {
 
   return (
     <form className="register__form" onSubmit={handleSubmit(onSent)}>
-     <div className='main__register'>
+      <section className="register__logo">
+          <h1> Carlota pizzería</h1>
+          <figure>
+            <img src={pizzalogo} alt="Logo pizza" className="register__icono" />
+          </figure>
+        </section>
+     <section className='main__register'>
        <h1>Crea tu cuenta</h1>
       <p>Disfruta de la mejor Pizza creada para las personas amantes del Código.</p>
       <input {...register("email", { required: true })} className="register__select" placeholder="Email" />
@@ -72,7 +80,7 @@ const RegisterForm=()=> {
       />
       <button type="submit" className='register__button'>Registrarse</button>
       <button onClick={hiddenLoggin} className="register__buttonhidden"> cerrar</button>
-      </div>
+      </section>
     </form>
   );
 }

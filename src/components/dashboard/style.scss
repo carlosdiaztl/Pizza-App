@@ -9,16 +9,30 @@ $size-body: 16px;
     background-color: #a5707d;
         background-color: $fondo-home;
         display: flex;
- 
+      .dashboard__disponibles{
+        display: flex;
+        justify-content: space-between;
+      }
+      .dashboard__link{
+        text-decoration: none;
+        color: $color-precio;
+        font-weight: bold;
+      }
 }
 
 .slider-container {
     display: flex;
-    
     width: 50vw;
-    height: 50vh;
+    height: 70vh;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    
+    .slider-costo{
+      background-color: #fb174f;
+      border-radius: 20px;
+      width: 100px;
+      font-size: 16px;
+    }
   }
   
   .slider-container section {
@@ -52,7 +66,7 @@ $size-body: 16px;
        flex-direction: column;
        align-items: center;
        width: 100vw;
-       height: 65vh;
+       height: 81vh;
        
     }
     .slider-container {

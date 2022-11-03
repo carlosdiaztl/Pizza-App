@@ -6,11 +6,12 @@ $color-reviews: #f97707;
 $size-body: 16px;
 
 @mixin sidebarButtons ($sb) {
-    border: 1px solid $color-precio;
+    border: none;
     border-radius: 100%;
     width: 100px;
     height: 100px;
     background-color: $color-filter;
+    box-shadow: 5px 5px 10px;
     
     &:hover{
         background-color: $color-precio;
@@ -20,7 +21,6 @@ $size-body: 16px;
 .sidebar {
     padding-top: 5%;
     width: 20vw;
-    height: 65vh;
     background-color: $fondo-home;
     display: flex;
     flex-direction: column;

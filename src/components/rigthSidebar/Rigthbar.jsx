@@ -9,14 +9,9 @@ const Rigthbar = () => {
  
   return (<>
   <div className='dashboard_rigth'>
-    <img src={image1}  />
-    <img src={image2}  />
-    
-    
+    <img className='dashboard__image1' src={image1}  />
+    <img  className='dashboard__image'src={image2}  />
     </div>
-
-
-
   </>
     
   )
