@@ -16,7 +16,16 @@ const Header = () => {
           <section className="header__section">
             <article className="header__home">
               <h2>Home</h2>
-              <p>¡Que bueno verte Chris!</p>
+               
+              {Object.entries(user).length === 0 ? 
+                <h2>¡ Que bueno verte!</h2>
+               : 
+                <>
+                  <p>¡Que bueno verte {user.profile.name} !</p>
+                 
+                  
+                </>
+              }
             </article>
 
             <div className="header__welcome">
@@ -25,9 +34,9 @@ const Header = () => {
                 <h2> Bienvenido </h2>
               ) : (
                 <>
-                  <h2> Bienvenido {user.profile.name} </h2>{" "}
-                  <h3> ¿Que pizza deseas el dia de hoy ?</h3>{" "}
-                  <button onClick={CloseSession}> Log out</button>{" "}
+                  <h2> Bienvenido {user.profile.name} </h2>
+                  <h3> ¿Que pizza deseas el dia de hoy ?</h3>
+                  <button onClick={CloseSession}> Log out</button>
                 </>
               )}
 

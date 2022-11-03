@@ -12,6 +12,7 @@ const Form = () => {
     if (usuarioEncontrado.length) {
       setUser(usuarioEncontrado[0]);
       console.log(user);
+      setTheme(false)
     } else {
       console.log("no se hallo nada");
     }
