@@ -1,25 +1,40 @@
-import React, { useState } from "react";
+import React, { useState , useContext,useEffect, useCallback} from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Container } from "react-bootstrap";
 import "./style.css";
+import { Link } from "react-router-dom";
+import { AppContexts } from "../App";
+import { getPizzas } from "../../services/pizzas";
 
 const ControlledCarousel = () => {
+  const {theme, pizzas, setPizzas } = useContext(AppContexts);
+
+
+  const traerPizzas = useCallback( async() => {
+    const allPizzas = await getPizzas();
+    
+    if (allPizzas.length > 1){
+      setPizzas(allPizzas);
+    console.log(pizzas);
+
+    }
+    else{}
+    },
+    []
+  );
+  useEffect(() => {
+    traerPizzas()
+
+    
+  }, [setPizzas])
+  
+
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
-  const listaPizzas = [
-    {
-      pizzaName: "peperoni",
-      img: "https://www.pizzaspiccolo.com.co//wp-content/uploads/2016/04/slide-pizzas-1.jpg",
-    },
-    {
-      pizzaName: "jamon",
-      img: "https://restaurante.guide/wp-content/uploads/2019/08/pizzaspiccolo-portada3.jpg",
-    },
-  ];
 
   return (
     <Container className="pizzas-container">
@@ -29,19 +44,22 @@ const ControlledCarousel = () => {
         activeIndex={index}
         onSelect={handleSelect}
       >
-        {listaPizzas.map((item, index) => (
+        {pizzas.map((item, index) => (
           <Carousel.Item className="pizzas-carousel-item" key={index}>
-            <img
+            <Link to={`/${item.name}`}>  <img 
               style={{
-                height: "50vh",
+                height: "40vh",
+                width: "50vw",
+
               }}
               className="d-block pizzas-carousel-img"
-              src={item.img}
+              src={item.imagenes}
               alt=""
-            />
+            /> </Link>
             <Carousel.Caption className="pizzas-carousel-caption">
-              <h3>First slide label</h3>
-              <p>{item.pizzaName}</p>
+              <h3> {item.pizza} </h3>
+              
+             
             </Carousel.Caption>
           </Carousel.Item>
         ))}

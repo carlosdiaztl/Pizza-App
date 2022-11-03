@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
-import { AppContext } from '../App';
+import { AppContexts } from '../App';
 import './sidebar.scss'
 
 const Sidebar = () => {
  
 
-  const {theme} = useContext(AppContext);
+  const {theme} = useContext(AppContexts);
 
   return (
     <div className="sidebar">

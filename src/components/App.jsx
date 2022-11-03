@@ -6,20 +6,19 @@ import Header from "./header/Header";
 import Sidebar from "./sidebar/Sidebar";
 import Carousel from "./carousel/Carousel";
 
-export const AppContext = createContext({});
+export const AppContexts = createContext({});
 
 const App = () => {
   const [theme, setTheme] = useState(false);
-  const [user, setUser] = useState({});
+ 
   const [pizzas, setPizzas] = useState([]);
 
   return (
-    <AppContext.Provider
+    <AppContexts.Provider
       value={{
         theme,
         setTheme,
-        user,
-        setUser,
+        
         pizzas,
         setPizzas,
       }}
@@ -31,7 +30,7 @@ const App = () => {
         {/* <Dashboard /> */}
       </div>
       <Footer />
-    </AppContext.Provider>
+    </AppContexts.Provider>
   );
 };
 export default App;

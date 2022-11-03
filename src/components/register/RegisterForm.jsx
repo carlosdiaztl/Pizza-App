@@ -3,12 +3,14 @@ import { useForm } from "react-hook-form";
 import './register.scss';
 import {RegisterUser} from '../../services/validate'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import { AppContext } from '../App'
+import { AppContexts } from '../App'
 import pizzalogo from "../../assets/pizza.png";
+import { AppContext } from "../../router/Router";
 
 
 const RegisterForm=()=> {
-  const { setTheme, theme , user, setUser } = useContext(AppContext);
+  const {user,setUser}=useContext(AppContext)
+  const { setTheme, theme  } = useContext(AppContexts);
   
   const { register, handleSubmit, } = useForm({
     defaultValues: {

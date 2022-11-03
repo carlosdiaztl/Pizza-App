@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { AppContext } from "../App";
+import { AppContexts } from "../App";
 import "../header/style.scss";
 import { validateUser } from "../../services/validate";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import pizzalogo from "../../assets/pizza.png";
+import { AppContext } from "../../router/Router";
 
 const Form = () => {
   const getuser = async (email, password) => {
@@ -17,8 +18,8 @@ const Form = () => {
       console.log("no se hallo nada");
     }
   };
-
-  const { setTheme, theme, user, setUser } = useContext(AppContext);
+const {user,setUser}=useContext(AppContext)
+  const { setTheme, theme } = useContext(AppContexts);
   const {
     register,
     handleSubmit,

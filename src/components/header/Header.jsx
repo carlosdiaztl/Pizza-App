@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-import { AppContext } from "../App";
+import { AppContexts } from "../App";
 import ButtonHeader from "./ButtonHeader";
 import imageUsuario from "../../assets/OIP.jpg";
+import { AppContext } from "../../router/Router";
 
 const Header = () => {
-  const { theme, setTheme, user, setUser } = useContext(AppContext);
+  const { theme, setTheme} = useContext(AppContexts);
+  const {user,setUser}=useContext(AppContext)
 
   const CloseSession = () => {
     setUser({});

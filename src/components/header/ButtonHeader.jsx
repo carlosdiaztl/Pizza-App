@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../App'
+import { AppContexts } from '../App'
 import RegisterForm from '../register/RegisterForm';
 import Form from './Form';
 
 const ButtonHeader = () => {
 
-  const { setTheme, theme } = useContext(AppContext);
+  const { setTheme, theme } = useContext(AppContexts);
 
   const handleChange = ({target}) => {
     setTheme(target.value)

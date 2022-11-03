@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getPizzas } from "../../services/pizzas";
-import { AppContext } from "../App";
+import { AppContexts } from "../App";
 import "./style.scss";
 
 import image3 from "../../assets/V1_WEB-PIZZAS-HAWAIANA.png";
 import Rigthbar from "../rigthSidebar/Rigthbar";
 
 const Dashboard = () => {
-  const { theme, pizzas, setPizzas } = useContext(AppContext);
+  const { theme, pizzas, setPizzas } = useContext(AppContexts);
   const traerPizzas = async () => {
     const allPizzas = await getPizzas();
     setPizzas(allPizzas);
