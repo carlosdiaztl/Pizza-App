@@ -4,6 +4,7 @@ import { pizzaBuscada } from '../../services/pizzaBuscada';
 import Header from '../header/Header';
 import { AppContext } from '../../router/Router';
 
+
 const Pizzas = ({name}) => {
   const {value, setValue}=useContext(AppContext);
  const  navigate=useNavigate()
@@ -27,6 +28,10 @@ const Pizzas = ({name}) => {
 console.log(busqueda);
 const goHome=()=>{
   navigate('/')
+
+}
+const goPagar=()=>{
+  navigate('/datos')
 
 }
 const suma=()=>{
@@ -62,7 +67,7 @@ const resta=()=>{
     <span>Cantidad:{value} </span>
     <button onClick={suma}> +</button>
     <button> canasta</button>
-    <button> pagar</button>
+    <button onClick={goPagar}> pagar</button>
     
      </div>
   )
