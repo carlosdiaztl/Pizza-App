@@ -6,9 +6,7 @@ $datos-pizza: #252525;
 $color-reviews: #f97707;
 $size-body: 16px;
 .dashboard{
-    background-color: #a5707d;
-        background-color: $fondo-home;
-        display: flex;
+      display: flex;
       .dashboard__disponibles{
         display: flex;
         justify-content: space-between;

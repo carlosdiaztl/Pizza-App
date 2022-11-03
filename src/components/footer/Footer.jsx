@@ -19,7 +19,7 @@ const  sendSearch =()=>{
    <footer className='footer'>
           <button className='footer__buttons'><img src={home} className="footer_imgs" /></button>
           <button className='footer__buttonsCenter'><img src={carrro} className="footer_imgs" /></button>
-          <button className='footer__buttons' onClick={sendSearch}><img src={lupa} className="footer_imgs"/></button> 
+          <button className='footer__buttonsLupa' onClick={sendSearch}><img src={lupa} className="footer_imgs"/></button> 
    </footer>
   )
 }

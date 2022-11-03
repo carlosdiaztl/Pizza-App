@@ -17,10 +17,10 @@ const Header = () => {
       <div className={`header header`}>
           <section className="header__section">
             <article className="header__home">
-              <h2>Home</h2>
+              <h2 className="header__tittle">Home</h2>
                
               {Object.entries(user).length === 0 ? 
-                <h2>¡ Que bueno verte!</h2>
+                <h2 className="header__h2">¡ Que bueno verte!</h2>
                : 
                 <>
                   <p>¡Que bueno verte {user.profile.name} !</p>

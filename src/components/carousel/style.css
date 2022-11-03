@@ -1,8 +1,14 @@
 .pizzas-container {
   margin-top: 30px;
-  width: 60vw;
-  height: 50vh;
+  width: 100vw;
+  height: 70vh;
+  padding-right: 17vw;
   color: black;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fef0ef !important;
 }
 
@@ -44,11 +50,9 @@ h3 {
 }
 
 @media screen and (max-width: 400px) {
-  .pizzas-carousel-img {
-    height: 150px;
-    width: 100%;
-  }
+ 
   .pizzas-carousel-caption p {
     font-size: 14px;
   }
+
 }

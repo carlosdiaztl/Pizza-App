@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$fondo-home: #fef0ef;
 
 * {
     margin: 0;
@@ -11,6 +12,9 @@
 
 .main {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $fondo-home;
 }
 
 
