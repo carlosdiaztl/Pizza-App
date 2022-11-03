@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useCallback,useContext} from 'react'
+import React,{useState,useEffect,useCallback,useContext,useMemo} from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { pizzaBuscada } from '../../services/pizzaBuscada';
 import Header from '../header/Header';
@@ -29,6 +29,21 @@ const goHome=()=>{
   navigate('/')
 
 }
+const suma=()=>{
+  if (value <= 9) {
+    setValue(value+1)
+    
+  }else{}
+
+}
+
+const resta=()=>{
+  if (value >= 2) {
+    setValue(value-1)
+    
+  }else{}
+
+}
   
   return (
 
@@ -43,9 +58,9 @@ const goHome=()=>{
     <h2>{busqueda.pizza}  </h2>
     <h4>{busqueda.ingredientes}  </h4>
     <h3>Precio:{busqueda.precio} </h3>
-    <button> -</button>
+    <button onClick={resta}> -</button>
     <span>Cantidad:{value} </span>
-    <button> +</button>
+    <button onClick={suma}> +</button>
     <button> canasta</button>
     <button> pagar</button>
     
