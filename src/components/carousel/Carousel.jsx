@@ -49,8 +49,8 @@ const ControlledCarousel = () => {
           <Carousel.Item className="pizzas-carousel-item" key={index}>
             <Link to={`/${item.name}`}>  <img 
               style={{
-                height: "40vh",
-                width: "50vw",
+                height: "100%",
+                width: "100%",
 
               }}
               className="d-block pizzas-carousel-img"
