@@ -1,0 +1,26 @@
+$fondo-home: #fef0ef;
+$color-precio: #fb174f;
+$color-filter: #fffdfe;
+$datos-pizza: #252525;
+$color-reviews: #f97707;
+$size-body: 16px;
+
+@mixin buttonPagar($bp) {
+    width: 200px;
+    height: 60px;
+    background-color: #fb174f;
+    color: white;
+    border: none;
+    &:hover{
+        background-color: $color-filter;
+        border: 1px solid $color-precio;
+    }
+}
+
+.pagar{
+    background-color: $fondo-home;
+
+    &__button{
+        @include buttonPagar(1);
+    }
+}
