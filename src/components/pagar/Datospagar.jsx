@@ -45,7 +45,7 @@ const Datospagar = () => {
           <article className="pagar__card">
             <img src={compra.imagenes} className="pagar__img" />
             <article>
-              <h4>{compra.pizza} </h4>
+              <h4 className="pagar__type">{compra.pizza} </h4>
               <article className="pagar__infoprecio">
                 <h5>X {compra.cantidad} </h5>{" "}
                 <span>
