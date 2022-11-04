@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import { pizzasCategory } from '../../services/pizzasCategory';
 import { AppContexts } from '../App';
 import './sidebar.scss'
 
@@ -6,9 +7,12 @@ const Sidebar = () => {
  
 
   const {theme,setPizzas } = useContext(AppContexts);
-const filtrar=(busqueda)=>{
+const filtrar= async(busqueda)=>{
   if (busqueda==="favoritas") {
     console.log('fav');
+    const search= await pizzasCategory('favoritas')
+    console.log(search);
+
     
   }
   if(busqueda==="lacasa"){
