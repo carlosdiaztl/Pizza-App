@@ -12,7 +12,7 @@ const useForm = (initialState = {}) => {
     }
 
 
-  return [dataForm, handleChangeInput,]
+  return [dataForm, handleChangeInput]
 }
 
 export default useForm
