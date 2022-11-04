@@ -32,6 +32,13 @@ const goHome=()=>{
 
 }
 const goPagar=()=>{
+  const compra={
+    ...busqueda,
+    cantidad:value
+  }
+  sessionStorage.setItem('compra',JSON.stringify(compra))
+  console.log(compra);
+  setValue(1)
   navigate('/datos')
 
 }

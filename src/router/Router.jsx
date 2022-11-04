@@ -11,6 +11,7 @@ export const AppContext = createContext({});
 const Router = () => {
   const [value, setValue] = useState(1);
   const [user, setUser] = useState({});
+  const [busqueda, setBusqueda] = useState([])
 
   const pizzasList = [   { name: "Carnes", }, { name: "Dosquesomanzana",}, {name: "Hawaiana",}, { name: "Mediterranea",}, { name: "Napolitana",
     },{ name: "Peperoniychampiñones", }, {  name: "Polloytocineta",},{  name: "Quesoazulsalmon",},{  name: "Quesoazuljamon",},{  name: "Tocinetamaiztierno",},
@@ -23,6 +24,8 @@ const Router = () => {
         setValue,
         user,
         setUser,
+        busqueda,
+        setBusqueda
         
       }}
     >
@@ -37,7 +40,8 @@ const Router = () => {
               key={index}
               path={`/${item.name}`}
               element={<Pizzas name={item.name} />}
-            />
+            >
+            </Route>
           ))}
           <Route path="datos" element={<Datospagar/>} />
           <Route path="/confirm" element={<ConfirmCompra/>} />
