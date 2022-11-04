@@ -1,5 +1,6 @@
+
 .pizzas-container {
-  margin-top: 10px;
+  margin-top: 25px;
   width: 100vw;
   height: 70vh;
   padding-right: 17vw;
@@ -9,7 +10,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fef0ef !important;
+  background-color: #fef0ef!important;
+}
+.pizzas__promos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  width: 100vw;
+}
+.pizzas__cupon{
+  background-color: #fb174f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  width: 30%;
+  height: 100%;
+  color: white;
+  flex-wrap: wrap;
+  box-shadow: 5px 5px 5px #0d0c0c;
+}
+.pizzas__h2{
+  font-size: 20px;
+}
+.pizzas__cupon__span{
+  font-weight: bold;
+  color: white;
+  font-size: 30px;
 }
 
 .pizzas-carousel-container {
@@ -54,5 +83,4 @@ h3 {
   .pizzas-carousel-caption p {
     font-size: 14px;
   }
-
 }

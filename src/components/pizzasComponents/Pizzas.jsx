@@ -4,6 +4,8 @@ import { pizzaBuscada } from '../../services/pizzaBuscada';
 import Header from '../header/Header';
 import { AppContext } from '../../router/Router';
 import './pizzas.scss'
+import canasta from '../../assets/cesta-de-la-compra2.png'
+import regresarbtn from '../../assets/flecha-hacia-abajo-para-navegar.png'
 
 
 const Pizzas = ({name}) => {
@@ -67,7 +69,7 @@ const resta=()=>{
     </figure>
 
     <article className='pizzas__nav'>
-    <button onClick={goHome} className='pizzas__regresarbtn'> Todas las pizzas</button>
+    <button onClick={goHome} className='pizzas__regresarbtn'> <img className='pizza__imageregresar' src={regresarbtn} alt="" /> Todas las pizzas</button>
     </article>
     </article>
 
@@ -82,7 +84,7 @@ const resta=()=>{
     <button onClick={resta} className='pizzas__minus'> -</button>
     <span className='pizzas__number'>{value} </span>
     <button onClick={suma} className='pizzas__plus'> +</button>
-    <button className='pizzas__buys'> canasta</button>
+    <button className='pizzas__buys'> <img className='pizzas__canasta' src={canasta} alt="" /></button>
     <button onClick={goPagar} className='pizzas__pay'> pagar</button>
     </article>
 
