@@ -16,6 +16,7 @@ $size-body: 16px;
     background-color: white;
     color: $color-precio;
     border-radius: 10px;
+    height: 50px;
   }
 }
 
@@ -41,7 +42,15 @@ $size-body: 16px;
       height: 5vh;
       font-size: 20px;
       font-weight: bolder;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
       border: none;
+      background-color: $fondo-home;
+    }
+    .pizza__imageregresar{
+        width: 15px;
     }
   }
   .pizzas__img {
@@ -101,6 +110,20 @@ $size-body: 16px;
     &:hover {
       background-color: $color-precio;
       color: white;
+    }
+  }
+  .pizzas__canasta{
+    background-color: $color-precio;
+    border: none;
+    width: 40px;
+    padding: 5px;
+   
+  }
+  .pizzas__buys{
+    border: 1px solid white;
+    border-radius: 3px;
+    &:hover{
+        border: 2px solid gray;
     }
   }
 }

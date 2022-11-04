@@ -3,9 +3,12 @@ import { Navigate, useNavigate } from "react-router-dom";
 import "./pagar.scss";
 import useForm from "../hooks/useForm";
 import Swal from "sweetalert2";
+
+import regresarcarrito from '../../assets/flecha-hacia-abajo-para-navegar.png'
 import { useEffect } from "react";
 import { protectedRoute } from "../utils/ruta";
 import { sendCompra } from "../../services/sendCompra";
+
 const Datospagar = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -55,9 +58,8 @@ const Datospagar = () => {
     <>
       <section className="pagar">
         {" "}
-        <button onClick={regresar} className="pagar__regresar">
-          Carrito de compras{" "}
-        </button>
+
+        <button onClick={regresar} className='pagar__regresar'> <img className="pagar__regresarcarrito" src={regresarcarrito} alt="" /> Carrito de compras </button>
         <section className="pagar__infocompras">
           <article className="pagar__card">
             <img

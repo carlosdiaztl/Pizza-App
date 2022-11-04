@@ -26,6 +26,10 @@ $size-body: 16px;
     font-size: 20px;
     font-weight: bolder;
     border: none;
+    background-color: $fondo-home;
+  }
+  .pagar__regresarcarrito{
+    width: 20px
   }
   &__button {
     @include buttonPagar(1);

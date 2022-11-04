@@ -39,7 +39,17 @@ const ControlledCarousel = () => {
 
   return (
     <Container className="pizzas-container">
-      <h2 className="pizzas-container-heading">Mira nuestras ricas pizzas</h2>
+      <section className="pizzas__promos">
+        <article className="pizzas__cupon">
+          <h2 className="pizzas__h2">Cupón Hawaiana <br></br><span className="pizzas__cupon__span">45% OFF</span></h2>
+        </article>
+        <article className="pizzas__cupon">
+          <h2 className="pizzas__h2">Cupón Mediterranea <br></br><span className="pizzas__cupon__span"> 25% OFF</span></h2>
+        </article>
+        <article className="pizzas__cupon">
+          <h2 className="pizzas__h2">Cupón Napolitana <br></br><span className="pizzas__cupon__span"> 25% OFF</span></h2>
+        </article>
+      </section>
       <Carousel
         className="pizzas-carousel-container"
         activeIndex={index}
@@ -59,8 +69,7 @@ const ControlledCarousel = () => {
             /> </Link>
             <Carousel.Caption className="pizzas-carousel-caption">
               <h3> {item.pizza} </h3>
-              
-             
+            
             </Carousel.Caption>
           </Carousel.Item>
         ))}

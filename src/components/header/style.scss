@@ -10,6 +10,7 @@ $size-body: 16px;
   height:5vh;
   background-color: #fffdfe51;
   border-top: 1px;
+  color: white;
   border-left: none;
   border-right: none;
 }
@@ -83,7 +84,7 @@ $size-body: 16px;
   flex-wrap: wrap;
   padding-left: 1vw;
   padding-right: 1vw;
-  height: 15vh;
+  height: 20vh;
   gap: 1vh;
   
   .header__buttonss{

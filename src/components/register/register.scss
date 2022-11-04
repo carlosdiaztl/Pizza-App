@@ -8,9 +8,10 @@ $size-body: 16px;
 
 @mixin inputRegister ($ir) {
   width: 220px;
-  height:3vh;
+  height:5vh;
+  background-color: #fffdfe51;
   border-top: 1px;
-  background-color: transparent;
+  color: white;
   border-left: none;
   border-right: none;
   
