@@ -59,14 +59,15 @@ const resta=()=>{
   
   return (
 
-    <div>
-    <button onClick={goHome}> Regresar</button>
-    
-    
-    
-    buscate la pizza {name} 
-
+    <div className='pizzas'>
+    <section className='pizzas__principal'>
+    <figure>
     <img src={busqueda.imagenes} />
+    </figure>
+    <button onClick={goHome}> Todas las pizzas</button>
+    buscate la pizza {name} 
+    </section>
+
     <h2>{busqueda.pizza}  </h2>
     <h4>{busqueda.ingredientes}  </h4>
     <h3>Precio:{busqueda.precio} </h3>
