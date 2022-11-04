@@ -7,6 +7,7 @@ import { AppContexts } from "../App";
 import { getPizzas } from "../../services/pizzas";
 
 const ControlledCarousel = () => {
+  sessionStorage.clear()
   const {theme, pizzas, setPizzas } = useContext(AppContexts);
 
 
