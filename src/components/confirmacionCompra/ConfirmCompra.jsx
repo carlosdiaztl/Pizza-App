@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
+import './confirmacion.scss'
 
 const ConfirmCompra = () => {
   const  navigate=useNavigate()
@@ -7,13 +8,12 @@ const GoHome=()=>{
 navigate('/')
 }
   return (
-    <div>
-    
-    
+    <div className='confirmation'>
+    <iframe src="https://giphy.com/embed/3o7bu8sRnYpTOG1p8k" width="300" height="300" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pizza-loading-snacks-3o7bu8sRnYpTOG1p8k"></a></p>
     <h1>Tu pedido está en proceso  </h1>
     <p> seras notificado cuando llegue el repartidor
     </p>
-    <button onClick={GoHome} > Aceptar </button>
+    <button onClick={GoHome} className='confirmation__button'> Aceptar </button>
     
     
     </div>
