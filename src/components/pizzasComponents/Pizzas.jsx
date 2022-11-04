@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { pizzaBuscada } from '../../services/pizzaBuscada';
 import Header from '../header/Header';
 import { AppContext } from '../../router/Router';
+import './pizzas.scss'
 
 
 const Pizzas = ({name}) => {
@@ -51,26 +52,35 @@ const resta=()=>{
 }
   
   return (
-
-    <div className='pizzas'>
-    <section className='pizzas__principal'>
+    <>
+    <section className='pizzas'>
+    <article className='pizzas__header'>
     <figure>
-    <img src={busqueda.imagenes} />
+    <img src={busqueda.imagenes} className='pizzas__img'/>
     </figure>
-    <button onClick={goHome}> Todas las pizzas</button>
-    buscate la pizza {name} 
-    </section>
 
-    <h2>{busqueda.pizza}  </h2>
-    <h4>{busqueda.ingredientes}  </h4>
-    <h3>Precio:{busqueda.precio} </h3>
-    <button onClick={resta}> -</button>
-    <span>Cantidad:{value} </span>
-    <button onClick={suma}> +</button>
-    <button> canasta</button>
-    <button onClick={goPagar}> pagar</button>
-    
-     </div>
+    <article className='pizzas__nav'>
+    <button onClick={goHome} className='pizzas__regresarbtn'> Todas las pizzas</button>
+    </article>
+    </article>
+
+    <article className='pizzas__main'>
+    <h2 className='pizzas__h1'>{busqueda.pizza}  </h2>
+    <h3 className='pizzas__precio'> $ {busqueda.precio} COP </h3>
+    <h2 className='pizzas__h4'>Descripción</h2>
+    <p className='pizzas__p'>{busqueda.ingredientes}  </p>
+    </article>
+
+    <article className='pizzas__footer'>
+    <button onClick={resta} className='pizzas__minus'> -</button>
+    <span className='pizzas__number'>{value} </span>
+    <button onClick={suma} className='pizzas__plus'> +</button>
+    <button className='pizzas__buys'> canasta</button>
+    <button onClick={goPagar} className='pizzas__pay'> pagar</button>
+    </article>
+
+    </section>
+    </>
   )
 }
 

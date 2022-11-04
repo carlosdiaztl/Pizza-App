@@ -1,5 +1,5 @@
 .pizzas-container {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100vw;
   height: 70vh;
   padding-right: 17vw;
@@ -13,7 +13,7 @@
 }
 
 .pizzas-carousel-container {
-  margin: 3%;
+  margin: 1%;
 }
 
 .pizzas-container-heading {
@@ -24,7 +24,7 @@
 }
 
 .pizzas-carousel-img {
-  height: 150px;
+  height: 100px;
   width: 100%;
   margin: 0 auto 3%;
 }
@@ -38,7 +38,7 @@
   margin: auto;
   color: #fefefe;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
 .pizzas-carousel-caption p {
