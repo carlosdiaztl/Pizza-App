@@ -3,9 +3,18 @@ import { Navigate, useNavigate } from "react-router-dom";
 import "./pagar.scss";
 import useForm from "../hooks/useForm";
 import Swal from "sweetalert2";
+
 import regresarcarrito from '../../assets/flecha-hacia-abajo-para-navegar.png'
+import { useEffect } from "react";
+import { protectedRoute } from "../utils/ruta";
+import { sendCompra } from "../../services/sendCompra";
 
 const Datospagar = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    protectedRoute(navigate);
+  }, []);
+
   const [dataForm, handleChangeInput] = useForm({
     name: "",
     numeroTarjeta: "",
@@ -16,7 +25,7 @@ const Datospagar = () => {
 
   const compra = JSON.parse(sessionStorage.getItem("compra"));
   console.log(compra);
-  const navigate = useNavigate();
+
   const confirm = async (e) => {
     e.preventDefault();
     console.log(dataForm);
@@ -29,6 +38,13 @@ const Datospagar = () => {
       dataForm.direccion !== ""
     ) {
       console.log(dataForm);
+      const compraCompleta = {
+        name: dataForm.name,
+        direccion: dataForm.direccion,
+        pizza: compra.pizza,
+        cantidad: compra.cantidad,
+      };
+      await sendCompra(compraCompleta);
       navigate("/confirm");
     } else {
       Swal.fire("Faltan datos", "Llene los datos por favor", "error");
@@ -42,22 +58,36 @@ const Datospagar = () => {
     <>
       <section className="pagar">
         {" "}
+
         <button onClick={regresar} className='pagar__regresar'> <img className="pagar__regresarcarrito" src={regresarcarrito} alt="" /> Carrito de compras </button>
         <section className="pagar__infocompras">
           <article className="pagar__card">
-            <img src={compra.imagenes} className="pagar__img" />
+            <img
+              src={compra ? `${compra.imagenes} ` : <></>}
+              className="pagar__img"
+            />
             <article>
-              <h4 className="pagar__type">{compra.pizza} </h4>
+              <h4 className="pagar__type">
+                {compra ? <>{compra.pizza} </> : <></>}{" "}
+              </h4>
               <article className="pagar__infoprecio">
-                <h5>X {compra.cantidad} </h5>{" "}
+                <h5>
+                  X{" "}
+                  {compra ? (
+                    <> {compra ? <>{compra.cantidad}</> : <></>}</>
+                  ) : (
+                    <></>
+                  )}{" "}
+                </h5>{" "}
                 <span>
-                  <h5>{compra.cantidad * compra.precio}</h5>{" "}
+                  <h5>
+                    {compra ? <>{compra.cantidad * compra.precio}</> : <></>}
+                  </h5>{" "}
                 </span>
               </article>
             </article>
           </article>
         </section>
-        
         <form onSubmit={confirm} className="pagar__form">
           <h5 className="pagar__informacion">Información de pago</h5>
           <label className="pagar__label">

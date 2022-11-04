@@ -5,13 +5,27 @@ import './sidebar.scss'
 const Sidebar = () => {
  
 
-  const {theme} = useContext(AppContexts);
+  const {theme,setPizzas } = useContext(AppContexts);
+const filtrar=(busqueda)=>{
+  if (busqueda==="favoritas") {
+    console.log('fav');
+    
+  }
+  if(busqueda==="lacasa"){
+    console.log('casa');
 
+  }
+  if(busqueda==="mes"){
+    console.log('mes');
+
+  }
+
+}
   return (
     <div className="sidebar">
-    <button className='sidebar__favoritas'> Favoritas</button>
-    <button className='sidebar__delacasa'> Las de la casa</button>
-    <button className='sidebar__recomendadas'> recomendada del mes</button>
+    <button className='sidebar__favoritas' onClick={()=>{filtrar('favoritas')} }> Favoritas</button>
+    <button className='sidebar__delacasa' onClick={()=>{filtrar('lacasa')} } > Las de la casa</button>
+    <button className='sidebar__recomendadas' onClick={()=>{filtrar('mes')} }> recomendada del mes</button>
     
 
     </div>

@@ -33,8 +33,8 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<App />} />
           <Route element={<App />}>
-            <Route path="/searchPizzas" element={<SearchPizzas />} />
           </Route>
+            <Route path="/searchPizzas" element={<SearchPizzas />} />
           {pizzasList.map((item, index) => (
             <Route
               key={index}
